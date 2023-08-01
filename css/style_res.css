@@ -7,7 +7,7 @@
 }
 /* =======================================================
 *
-* 	Template Style
+* 	Template Style 
 *
 * ======================================================= */
 body {
@@ -487,9 +487,8 @@ h1, h2, h3, h4, h5, h6, figure {
 .gtco-cover.gtco-cover-xxs {
   padding: 3em 0;
 }
-/* tole01082023 cambio de color */
 .gtco-cover .btn-primary {
-  color: #fff992 !important;
+  color: #fff !important;
 }
 
 #gtco-about,
