@@ -772,10 +772,12 @@ form label {
 }
 #gtco-header .display-tc h1, #gtco-header .display-tc h2,
 .gtco-cover .display-tc h1,
+/* tole01082023 cambio de color */
 .gtco-cover .display-tc h2 {
   margin: 0;
   padding: 0;
-  color: white;
+  /*color: white;*/
+  color: #0000FF
 }
 #gtco-header .display-tc h1,
 .gtco-cover .display-tc h1 {
