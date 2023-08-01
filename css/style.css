@@ -409,8 +409,10 @@ h1, h2, h3, h4, h5, h6, figure {
 .gtco-cover a {
   color: #7ED321;
 }
+/* tole01082023 cambio de color */
 .gtco-cover a:hover {
-  color: white;
+/*  color: white;*/
+color: #0000FF;
 }
 .gtco-cover .overlay {
   z-index: 1;
@@ -487,9 +489,9 @@ h1, h2, h3, h4, h5, h6, figure {
 .gtco-cover.gtco-cover-xxs {
   padding: 3em 0;
 }
-/* tole01082023 cambio de color */
+
 .gtco-cover .btn-primary {
-  color: #7cdaf9 !important;
+  color: #fff !important;
 }
 
 #gtco-about,
