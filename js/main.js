@@ -23,58 +23,21 @@
 		}
 	};
 
-
-
-	var parallax = function() {
-		if ( !isMobile.any()) {
-			$(window).stellar();
-		}
-	};
-
 	var mobileMenuOutsideClick = function() {
 
 		$(document).click(function (e) {
-	    var container = $("#gtco-offcanvas, .js-gtco-nav-toggle");
+	    var container = $("#colorlib-offcanvas, .js-colorlib-nav-toggle");
 	    if (!container.is(e.target) && container.has(e.target).length === 0) {
+
 	    	if ( $('body').hasClass('offcanvas') ) {
+
     			$('body').removeClass('offcanvas');
-    			$('.js-gtco-nav-toggle').removeClass('active');
+    			$('.js-colorlib-nav-toggle').removeClass('active');
+				
 	    	}
+	    
+	    	
 	    }
-		});
-
-	};
-
-	
-
-	var header = function() {
-		$(window).scroll(function(){
-			var st = $(window).scrollTop();
-			if (st > 50) {
-				$('.gtco-nav').addClass('scrolled');
-			} else {
-				$('.gtco-nav').removeClass('scrolled');
-			}
-		});
-   
-	};
-
-	var navigation = function() {
-
-		$('body').on('click', '#gtco-offcanvas ul a:not([class="external"]), .main-nav a:not([class="external"])', function(event){
-			var section = $(this).data('nav-section');
-				if ( $('[data-section="' + section + '"]').length ) {
-			    	$('html, body').animate({
-			        	scrollTop: $('[data-section="' + section + '"]').offset().top - 55
-			    	}, 500, 'easeInOutExpo');
-			   }
-
-			   if ($('body').hasClass('offcanvas')) {
-			   	$('body').removeClass('offcanvas');
-			   	$('.js-gtco-nav-toggle').removeClass('active');
-			   }
-		   event.preventDefault();
-		   return false;
 		});
 
 	};
@@ -82,15 +45,15 @@
 
 	var offcanvasMenu = function() {
 
-		$('body').prepend('<div id="gtco-offcanvas" />');
-		$('body').prepend('<a href="#" class="js-gtco-nav-toggle gtco-nav-toggle"><i></i></a>');
+		$('#page').prepend('<div id="colorlib-offcanvas" />');
+		$('#page').prepend('<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle colorlib-nav-white"><i></i></a>');
 		var clone1 = $('.menu-1 > ul').clone();
-		$('#gtco-offcanvas').append(clone1);
+		$('#colorlib-offcanvas').append(clone1);
 		var clone2 = $('.menu-2 > ul').clone();
-		$('#gtco-offcanvas').append(clone2);
+		$('#colorlib-offcanvas').append(clone2);
 
-		$('#gtco-offcanvas .has-dropdown').addClass('offcanvas-has-dropdown');
-		$('#gtco-offcanvas')
+		$('#colorlib-offcanvas .has-dropdown').addClass('offcanvas-has-dropdown');
+		$('#colorlib-offcanvas')
 			.find('li')
 			.removeClass('has-dropdown');
 
@@ -117,65 +80,29 @@
 			if ( $('body').hasClass('offcanvas') ) {
 
     			$('body').removeClass('offcanvas');
-    			$('.js-gtco-nav-toggle').removeClass('active');
+    			$('.js-colorlib-nav-toggle').removeClass('active');
 				
 	    	}
 		});
 	};
 
-
-	// Reflect scrolling in navigation
-	var navActive = function(section) {
-
-		var $el = $('.main-nav > ul');
-		$el.find('li').removeClass('active');
-		$el.each(function(){
-			$(this).find('a[data-nav-section="'+section+'"]').closest('li').addClass('active');
-		});
-
-	};
-
-	var navigationSection = function() {
-
-		var $section = $('section[data-section]');
-		
-		$section.waypoint(function(direction) {
-		  	
-		  	if (direction === 'down') {
-		    	navActive($(this.element).data('section'));
-		  	}
-		}, {
-	  		offset: '150px'
-		});
-
-		$section.waypoint(function(direction) {
-		  	if (direction === 'up') {
-		    	navActive($(this.element).data('section'));
-		  	}
-		}, {
-		  	offset: function() { return -$(this.element).height() + 155; }
-		});
-
-	};
-
 	var burgerMenu = function() {
 
-		$('body').on('click', '.js-gtco-nav-toggle', function(event){
+		$('body').on('click', '.js-colorlib-nav-toggle', function(event){
 			var $this = $(this);
 
 
-			if ( $('body').hasClass('offcanvas') ) {
-				$('body').removeClass('offcanvas');
+			if ( $('body').hasClass('overflow offcanvas') ) {
+				$('body').removeClass('overflow offcanvas');
 			} else {
-				$('body').addClass('offcanvas');
+				$('body').addClass('overflow offcanvas');
 			}
 			$this.toggleClass('active');
 			event.preventDefault();
 
 		});
 	};
-
-
+	
 
 	var contentWayPoint = function() {
 		var i = 0;
@@ -236,52 +163,6 @@
 	};
 
 
-	var owlCarousel = function(){
-		
-		var owl = $('.owl-carousel-carousel');
-		owl.owlCarousel({
-			items: 3,
-			loop: true,
-			margin: 20,
-			nav: true,
-			dots: true,
-			smartSpeed: 800,
-			navText: [
-		      "<i class='ti-arrow-left owl-direction'></i>",
-		      "<i class='ti-arrow-right owl-direction'></i>"
-	     	],
-	     	responsive:{
-	        0:{
-	            items:1
-	        },
-	        600:{
-	            items:2
-	        },
-	        1000:{
-	            items:3
-	        }
-	    	}
-		});
-
-
-		var owl = $('.owl-carousel-fullwidth');
-		owl.owlCarousel({
-			items: 1,
-			loop: true,
-			margin: 20,
-			nav: true,
-			dots: true,
-			smartSpeed: 800,
-			autoHeight: true,
-			navText: [
-		      "<i class='ti-arrow-left owl-direction'></i>",
-		      "<i class='ti-arrow-right owl-direction'></i>"
-	     	]
-		});
-
-	};
-
-
 	var goToTop = function() {
 
 		$('.js-gotop').on('click', function(event){
@@ -311,25 +192,64 @@
 
 	// Loading page
 	var loaderPage = function() {
-		$(".gtco-loader").fadeOut("slow");
+		$(".colorlib-loader").fadeOut("slow");
 	};
 
-	
+
+	var sliderMain = function() {
+		
+	  	$('#colorlib-hero .flexslider').flexslider({
+			animation: "fade",
+			slideshowSpeed: 5000,
+			directionNav: true,
+			start: function(){
+				setTimeout(function(){
+					$('.slider-text').removeClass('animated fadeInUp');
+					$('.flex-active-slide').find('.slider-text').addClass('animated fadeInUp');
+				}, 500);
+			},
+			before: function(){
+				setTimeout(function(){
+					$('.slider-text').removeClass('animated fadeInUp');
+					$('.flex-active-slide').find('.slider-text').addClass('animated fadeInUp');
+				}, 500);
+			}
+
+	  	});
+
+	};
+
+	// Owl Carousel
+	var owlCrouselFeatureSlide = function() {
+		$('.owl-carousel').owlCarousel({
+			animateOut: 'fadeOut',
+		   animateIn: 'fadeIn',
+		   autoplay: true,
+		   loop:true,
+		   margin:0,
+		   nav:true,
+		   dots: false,
+		   autoHeight: true,
+		   items: 1,
+		   navText: [
+		      "<i class='icon-arrow-left3 owl-direction'></i>",
+		      "<i class='icon-arrow-right3 owl-direction'></i>"
+	     	]
+		})
+	};
 
 
 	
 	$(function(){
-		parallax();
 		mobileMenuOutsideClick();
-		header();
-		navigation();
 		offcanvasMenu();
 		burgerMenu();
-		navigationSection();
 		contentWayPoint();
+		sliderMain();
 		dropdown();
 		goToTop();
 		loaderPage();
+		owlCrouselFeatureSlide();
 	});
 
 

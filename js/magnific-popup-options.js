@@ -26,6 +26,12 @@ $(document).ready(function() {
 		});
 	};
 
+	var linkMagnifPopup = function() {
+		$('.image-popup-link').magnificPopup({
+		  type: 'image'
+		});
+	};
+
 	var magnifVideo = function() {
 		$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
         disableOn: 700,
@@ -43,6 +49,7 @@ $(document).ready(function() {
 
 	// Call the functions 
 	magnifPopup();
+	linkMagnifPopup();
 	magnifVideo();
 
 });
