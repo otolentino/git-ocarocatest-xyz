@@ -489,9 +489,10 @@ color: #800080;
 .gtco-cover.gtco-cover-xxs {
   padding: 3em 0;
 }
-
+/* tole01082023 cambio de color */
 .gtco-cover .btn-primary {
-  color: #fff !important;
+/*  color: #fff !important;*/
+color: #800080 !important;
 }
 
 #gtco-about,
