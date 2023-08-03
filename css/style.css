@@ -412,7 +412,7 @@ h1, h2, h3, h4, h5, h6, figure {
 /* tole01082023 cambio de color */
 .gtco-cover a:hover {
 /*  color: white;*/
-color: #0000FF;
+color: #800080;
 }
 .gtco-cover .overlay {
   z-index: 1;
@@ -777,7 +777,7 @@ form label {
   margin: 0;
   padding: 0;
   /*color: white;*/
-  color: #0000FF
+  color: #800080
 }
 #gtco-header .display-tc h1,
 .gtco-cover .display-tc h1 {
